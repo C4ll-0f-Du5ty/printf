@@ -12,6 +12,7 @@ int print_unsigned(va_list args, int *counter)
 	unsigned int number = va_arg(args, unsigned int);
 	char buffer[20];
 	int index = 0;
+	int i;
 
 	if (number == 0)
 	{
@@ -25,7 +26,7 @@ int print_unsigned(va_list args, int *counter)
 		number /= 10;
 	}
 
-	for (int i = index - 1; i >= 0; i--)
+	for (i = index - 1; i >= 0; i--)
 	{
 		_putchar(buffer[i]);
 	}
@@ -100,13 +101,14 @@ int print_octal(va_list args, int *counter)
 	unsigned int number = va_arg(args, unsigned int);
 	char octalString[12];
 	int i = 0;
+	int j;
 
 	do {
 		octalString[i++] = '0' + (number % 8);
 		number /= 8;
 	} while (number > 0);
 
-	for (int j = i - 1; j >= 0; j--)
+	for (j = i - 1; j >= 0; j--)
 	{
 		_putchar(octalString[j]);
 	}

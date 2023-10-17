@@ -20,33 +20,31 @@ int _specifiers(const char *format, va_list args)
 			format++;
 			FormatHandler formatHandlers[] = {
 				{'c', print_char},
-				{'s', print_string},
-				{'%', print_percent},
-				{'d', print_int},
-				{'i', print_int},
+				{'s', print_string}, {'%', print_percent},
+				{'d', print_int}, {'i', print_int},
 				{'u', print_unsigned},
-				{'b', print_binary},
-				{'x', print_hex},
-				{'X', print_HEX},
-				{'o', print_octal},
+				{'b', print_binary}, {'x', print_hex},
+				{'X', print_HEX}, {'o', print_octal},
 				{'p', print_pointer},
-				{'r', print_reverse}, {'S', print_only_string}, {'\0', NULL}
+				{'r', print_reverse}, {'S', print_only_string},
+				{'\0', NULL},
 			};
 			for (i = 0; formatHandlers[i].specifier != '\0'; i++)
 			{
 				if (formatHandlers[i].specifier == *format)
-				{counter += formatHandlers[i].handler(args, &counter);
+				{
+					counter += formatHandlers[i].handler(args, &counter);
 					found = 1;
 					break;
 				}
 			}
 		}
 		else
-		{_putchar(*format);
+		{
+			_putchar(*format);
 			counter++;
 		}
 		format++;
 	}
 	return (counter);
 }
-

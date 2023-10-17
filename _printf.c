@@ -11,6 +11,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
+	int result;
 
 	va_start(args, format);
 
@@ -19,7 +20,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	}
 
-	int result = _specifiers(format, args);
+	result = _specifiers(format, args);
 
 	va_end(args);
 	return (result);
