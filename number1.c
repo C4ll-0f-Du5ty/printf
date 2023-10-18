@@ -124,22 +124,11 @@ int print_octal(va_list args, int *counter)
  *
  * Return: The updated character count
  */
-int print_pointer(va_list args, int *counter)
-{
-	uintptr_t address = (uintptr_t)va_arg(args, void*);
-	char hexCh[] = "0123456789ABCDEF";
-	char hexString[17];
-	int i = 0;
-
-	while (i < 8)
-	{
-		hexString[i] = hexCh[(address >> (60 - i * 4)) & 0xF];
-		i++;
-	}
-
-	hexString[i] = '\0';
-
-	_puts(hexString);
-	*counter += i;
-	return (*counter);
+int print_pointer(va_list args, int* counter) {
+		uintptr_t address = (uintptr_t)va_arg(args, void*);
+		char hexString[19];
+		snprintf(hexString, sizeof(hexString), "0x%" PRIxPTR, address);
+		_puts(hexString);
+		*counter += 18;
+		return *counter;
 }

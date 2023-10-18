@@ -35,7 +35,8 @@ int _specifiers(const char *format, va_list args)
 				}
 			}
 			if (found == 0)
-			{_putchar(*format);
+			{_putchar(37);
+				_putchar(*format);
 				counter++;
 			}
 		}
