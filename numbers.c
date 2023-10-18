@@ -9,6 +9,8 @@
 int _printNumbers(int number)
 {
 	int i;
+	char buffer[20];
+	int index = 0;
 
 	if (number < 0)
 	{
@@ -21,9 +23,6 @@ int _printNumbers(int number)
 		_putchar('0');
 		return (0);
 	}
-
-	char buffer[20];
-	int index = 0;
 
 	while (number > 0)
 	{
@@ -62,6 +61,7 @@ int print_int(va_list args, int *counter)
  */
 int print_percent(va_list args, int *counter)
 {
+	(void)args;
 	_putchar('%');
 	(*counter)++;
 	return (0);
@@ -74,6 +74,8 @@ int print_percent(va_list args, int *counter)
 void decToBinary(int n)
 {
 	int j;
+	int binary[32];
+	int i = 0;
 
 	if (n == 0)
 	{
@@ -85,9 +87,6 @@ void decToBinary(int n)
 		printf("-");
 		n = -n;
 	}
-
-	int binary[32];
-	int i = 0;
 
 	while (n > 0)
 	{

@@ -38,12 +38,13 @@ int _printf(const char *format, ...)
 int print_reverse(va_list args, int *counter)
 {
 	char *s = va_arg(args, char*);
+	int i;
 
 	if (s)
 	{
 		int len = strlen(s);
 
-		for (int i = len - 1; i >= 0; i--)
+		for (i = len - 1; i >= 0; i--)
 		{
 			_putchar(s[i]);
 			(*counter)++;
