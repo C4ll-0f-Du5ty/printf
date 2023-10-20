@@ -21,11 +21,11 @@ int _putchar(char c)
  */
 int print_char(va_list args, int *counter)
 {
-	char c = va_arg(args, char);
+	char c = va_arg(args, int);
 
 	_putchar(c);
 	(*counter)++;
-	return (*counter);
+	return (1);
 }
 
 /**
