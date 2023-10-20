@@ -21,7 +21,7 @@ int _putchar(char c)
  */
 int print_char(va_list args, int *counter)
 {
-	char c = va_arg(args, int);
+	char c = va_arg(args, char);
 
 	_putchar(c);
 	(*counter)++;
