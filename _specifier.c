@@ -16,11 +16,9 @@ int _specifiers(const char *format, va_list args)
 				FormatHandler formatHandlers[] = {
 				{'c', print_char}, {'s', print_string}, {'%', print_percent},
 				{'d', print_int}, {'i', print_int}, {'u', print_unsigned},
-				{'b', print_binary}, {'x', print_hex},
-				{'X', print_HEX}, {'o', print_octal},
-				{'p', print_pointer}, {'S', print_only_string},
-				{'\0', NULL},
-				};
+				{'b', print_binary}, {'x', print_hex}, {'X', print_HEX},
+				{'o', print_octal}, {'p', print_pointer}, {'S', print_only_string},
+				{'\0', NULL}, };
 	while (*format)
 	{
 		if (*format == '%' && *(format + 1))
@@ -33,6 +31,8 @@ int _specifiers(const char *format, va_list args)
 					found = 1;
 					break;
 				}
+				if (*format == 'c')
+					counter -= 1;
 			}
 			if (found == 0)
 			{_putchar(37);
