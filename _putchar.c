@@ -25,7 +25,7 @@ int print_char(va_list args, int *counter)
 
 	_putchar(c);
 	(*counter)++;
-	return (1);
+	return (*counter);
 }
 
 /**
