@@ -11,7 +11,7 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int result;
+	int result = 0;
 
 	va_start(args, format);
 
